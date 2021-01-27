@@ -35,7 +35,7 @@
             <div class="col-md-4">
                 <div class="withdraw status">
                     <h5>Withdraw</h5>
-                <h2>$00</h2>
+                <h2>$<span id="currentWithraw">00</span></h2>
                 </div>
             </div>
             <div class="col-md-4">
@@ -97,7 +97,12 @@ const withdrawBtn =document.getElementById('addWithdraw');
 //button k access korlam
 withdrawBtn.addEventListener('click',function(){
     const withdrawNumber = getInput("withdrawAmount");
-    console.log(withdrawNumber);
+    updateSpanTag("currentWithraw",withdrawNumber);
+    updateSpanTag("cuurentBalance",-1 * withdrawNumber);
+
+ 
+ document.getElementById('withdrawAmount').value="";
+
 
 })
 
